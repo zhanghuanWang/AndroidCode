@@ -1,5 +1,6 @@
-package cn.laolema.mix;
+package cn.laolema.mix.ui;
 
+import cn.laolema.mix.R;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
