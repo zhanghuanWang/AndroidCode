@@ -19,58 +19,58 @@ package cn.laolema.mix.util;
 import android.content.Context;
 import android.util.Log;
 
-/** 
-* FileName: L.java 
-* description：LogUtil
-* @version v1.0
-* @author WangZhanghuan
-* @date：2015-08-15 22:22:22
-*/ 
+/**
+ * FileName: L.java description：LogUtil
+ * 
+ * @version v1.0
+ * @author WangZhanghuan
+ * @date：2015-08-15 22:22:22
+ */
 public class L {
-	
-    /** debug FLAG */
-	public static boolean D ;
-	
+
+	/** debug FLAG */
+	public static boolean D;
+
 	/** info FLAG */
-	public static boolean I ;
-	
+	public static boolean I;
+
 	/** error FLAG */
-	public static boolean E ;
-	
+	public static boolean E;
+
 	/** VERBOSE FLAG */
-	public static boolean V ;
-	
+	public static boolean V;
+
 	/** WARN FLAG */
-	public static boolean W ;
-	
+	public static boolean W;
+
 	/**
 	 * @param d
 	 */
 	public static void debug(boolean d) {
-		D  = d;
+		D = d;
 	}
-	
+
 	/**
 	 * @param i
 	 */
 	public static void info(boolean i) {
-		I  = i;
+		I = i;
 	}
-	
+
 	/**
 	 * @param e
 	 */
 	public static void error(boolean e) {
-		E  = e;
+		E = e;
 	}
-	
+
 	/**
 	 * @param w
 	 */
 	public static void warn(boolean w) {
-		W  = w;
+		W = w;
 	}
-	
+
 	/**
 	 * @param d
 	 * @param i
@@ -78,398 +78,512 @@ public class L {
 	 * @param w
 	 */
 	public static void setLog(boolean d, boolean i, boolean e, boolean w) {
-		D  = d;
-		I  = i;
-		E  = e;
-		W  = w;
+		D = d;
+		I = i;
+		E = e;
+		W = w;
 	}
-	
+
 	/**
 	 * open all log flag
 	 */
 	public static void openAll() {
-		D  = true;
-		I  = true;
-		E  = true;
-		W  = true;
+		D = true;
+		I = true;
+		E = true;
+		W = true;
 	}
-	
+
 	/**
 	 * close all log flag
 	 */
 	public static void closeAll() {
-		D  = false;
-		I  = false;
-		E  = false;
-		W  = false;
+		D = false;
+		I = false;
+		E = false;
+		W = false;
 	}
-		
 
 	/**
-     * Send {@link #Log} 
-     * @param tag Used to identify the source of a log message.  It usually identifies
-     *        the class or activity where the log call occurs.
-     * @param msg The message you would like logged.
-     */
+	 * Send {@link #Log}
+	 * 
+	 * @param tag
+	 *            Used to identify the source of a log message. It usually
+	 *            identifies the class or activity where the log call occurs.
+	 * @param msg
+	 *            The message you would like logged.
+	 */
 	public static void d(String tag, String msg) {
-		if(D) Log.d(tag, msg);
-		
-	} 
-	
+		if (D)
+			Log.d(tag, msg);
+
+	}
+
 	/**
-	 * Send {@link #Log} 
-	 * @param context Used to identify the source of a log message. 
-	 * @param msg The message you would like logged.
+	 * Send {@link #Log}
+	 * 
+	 * @param context
+	 *            Used to identify the source of a log message.
+	 * @param msg
+	 *            The message you would like logged.
 	 */
 	public static void d(Context context, String msg) {
-		if(D) {
+		if (D) {
 			String tag = context.getClass().getSimpleName();
 			Log.d(tag, msg);
 		}
-		
-	} 
-	
+
+	}
+
 	/**
-	 * Send {@link #Log} 
-	 * @param context Used to identify the source of a log message. 
-	 * @param msg The message you would like logged.
+	 * Send {@link #Log}
+	 * 
+	 * @param context
+	 *            Used to identify the source of a log message.
+	 * @param msg
+	 *            The message you would like logged.
 	 */
 	public static void d(Class<?> clazz, String msg) {
-		if(D) {
+		if (D) {
 			String tag = clazz.getSimpleName();
 			Log.d(tag, msg);
 		}
-		
-	} 
-	
-	/**
-     * Send {@link #Log} 
-     * @param tag Used to identify the source of a log message.  It usually identifies
-     *        the class or activity where the log call occurs.
-     * @param msg The message you would like logged.
-     * @param tr An exception to log
-     */
-	public static void d(String tag, String msg, Throwable tr) {
-		if(D) Log.d(tag, msg, tr);
+
 	}
-	
+
 	/**
-	 * Send {@link #Log} 
-	 * @param tag Used to identify the source of a log message.  
-	 * @param msg The message you would like logged.
-	 * @param tr An exception to log
+	 * Send {@link #Log}
+	 * 
+	 * @param tag
+	 *            Used to identify the source of a log message. It usually
+	 *            identifies the class or activity where the log call occurs.
+	 * @param msg
+	 *            The message you would like logged.
+	 * @param tr
+	 *            An exception to log
+	 */
+	public static void d(String tag, String msg, Throwable tr) {
+		if (D)
+			Log.d(tag, msg, tr);
+	}
+
+	/**
+	 * Send {@link #Log}
+	 * 
+	 * @param tag
+	 *            Used to identify the source of a log message.
+	 * @param msg
+	 *            The message you would like logged.
+	 * @param tr
+	 *            An exception to log
 	 */
 	public static void d(Context context, String msg, Throwable tr) {
-		if(D) {
+		if (D) {
 			String tag = context.getClass().getSimpleName();
 			Log.d(tag, msg, tr);
 		}
 	}
-	
+
 	/**
-	 * Send {@link #Log} 
-	 * @param tag Used to identify the source of a log message. 
-	 * @param msg The message you would like logged.
-	 * @param tr An exception to log
+	 * Send {@link #Log}
+	 * 
+	 * @param tag
+	 *            Used to identify the source of a log message.
+	 * @param msg
+	 *            The message you would like logged.
+	 * @param tr
+	 *            An exception to log
 	 */
 	public static void d(Class<?> clazz, String msg, Throwable tr) {
-		if(D) {
+		if (D) {
 			String tag = clazz.getSimpleName();
 			Log.d(tag, msg, tr);
 		}
 	}
-	
+
 	/**
-	 * Send {@link #Log} 
-	 * @param tag Used to identify the source of a log message.  It usually identifies
-	 *        the class or activity where the log call occurs.
-	 * @param msg The message you would like logged.
+	 * Send {@link #Log}
+	 * 
+	 * @param tag
+	 *            Used to identify the source of a log message. It usually
+	 *            identifies the class or activity where the log call occurs.
+	 * @param msg
+	 *            The message you would like logged.
 	 */
 	public static void i(String tag, String msg) {
-		if(I) Log.i(tag, msg);
-		
-	} 
-	
+		if (I)
+			Log.i(tag, msg);
+
+	}
+
 	/**
-	 * Send {@link #Log} 
-	 * @param context Used to identify the source of a log message. 
-	 * @param msg The message you would like logged.
+	 * Send {@link #Log}
+	 * 
+	 * @param context
+	 *            Used to identify the source of a log message.
+	 * @param msg
+	 *            The message you would like logged.
 	 */
 	public static void i(Context context, String msg) {
-		if(I) {
+		if (I) {
 			String tag = context.getClass().getSimpleName();
 			Log.i(tag, msg);
 		}
-		
-	} 
-	
+
+	}
+
 	/**
-	 * Send {@link #Log} 
-	 * @param context Used to identify the source of a log message. 
-	 * @param msg The message you would like logged.
+	 * Send {@link #Log}
+	 * 
+	 * @param context
+	 *            Used to identify the source of a log message.
+	 * @param msg
+	 *            The message you would like logged.
 	 */
 	public static void i(Class<?> clazz, String msg) {
-		if(I) {
+		if (I) {
 			String tag = clazz.getSimpleName();
 			Log.i(tag, msg);
 		}
-		
-	} 
-	
+
+	}
+
 	/**
-	 * Send {@link #Log} 
-	 * @param tag Used to identify the source of a log message.  It usually identifies
-	 *        the class or activity where the log call occurs.
-	 * @param msg The message you would like logged.
-	 * @param tr An exception to log
+	 * Send {@link #Log}
+	 * 
+	 * @param tag
+	 *            Used to identify the source of a log message. It usually
+	 *            identifies the class or activity where the log call occurs.
+	 * @param msg
+	 *            The message you would like logged.
+	 * @param tr
+	 *            An exception to log
 	 */
 	public static void i(String tag, String msg, Throwable tr) {
-		if(I) Log.i(tag, msg, tr);
+		if (I)
+			Log.i(tag, msg, tr);
 	}
-	
+
 	/**
-	 * Send {@link #Log} 
-	 * @param tag Used to identify the source of a log message.  
-	 * @param msg The message you would like logged.
-	 * @param tr An exception to log
+	 * Send {@link #Log}
+	 * 
+	 * @param tag
+	 *            Used to identify the source of a log message.
+	 * @param msg
+	 *            The message you would like logged.
+	 * @param tr
+	 *            An exception to log
 	 */
 	public static void i(Context context, String msg, Throwable tr) {
-		if(I) {
+		if (I) {
 			String tag = context.getClass().getSimpleName();
 			Log.i(tag, msg, tr);
 		}
 	}
-	
+
 	/**
-	 * Send {@link #Log} 
-	 * @param tag Used to identify the source of a log message. 
-	 * @param msg The message you would like logged.
-	 * @param tr An exception to log
+	 * Send {@link #Log}
+	 * 
+	 * @param tag
+	 *            Used to identify the source of a log message.
+	 * @param msg
+	 *            The message you would like logged.
+	 * @param tr
+	 *            An exception to log
 	 */
 	public static void i(Class<?> clazz, String msg, Throwable tr) {
-		if(I) {
+		if (I) {
 			String tag = clazz.getSimpleName();
 			Log.d(tag, msg, tr);
 		}
 	}
-	
+
 	/**
-	 * Send {@link #Log} 
-	 * @param tag Used to identify the source of a log message.  It usually identifies
-	 *        the class or activity where the log call occurs.
-	 * @param msg The message you would like logged.
+	 * Send {@link #Log}
+	 * 
+	 * @param tag
+	 *            Used to identify the source of a log message. It usually
+	 *            identifies the class or activity where the log call occurs.
+	 * @param msg
+	 *            The message you would like logged.
 	 */
 	public static void v(String tag, String msg) {
-		if(V) Log.v(tag, msg);
-		
-	} 
-	
+		if (V)
+			Log.v(tag, msg);
+
+	}
+
 	/**
-	 * Send {@link #Log} 
-	 * @param context Used to identify the source of a log message. 
-	 * @param msg The message you would like logged.
+	 * Send {@link #Log}
+	 * 
+	 * @param context
+	 *            Used to identify the source of a log message.
+	 * @param msg
+	 *            The message you would like logged.
 	 */
 	public static void v(Context context, String msg) {
-		if(V) {
+		if (V) {
 			String tag = context.getClass().getSimpleName();
 			Log.v(tag, msg);
 		}
-		
-	} 
-	
+
+	}
+
 	/**
-	 * Send {@link #Log} 
-	 * @param context Used to identify the source of a log message. 
-	 * @param msg The message you would like logged.
+	 * Send {@link #Log}
+	 * 
+	 * @param context
+	 *            Used to identify the source of a log message.
+	 * @param msg
+	 *            The message you would like logged.
 	 */
 	public static void v(Class<?> clazz, String msg) {
-		if(V) {
+		if (V) {
 			String tag = clazz.getSimpleName();
 			Log.v(tag, msg);
 		}
-		
-	} 
-	
+
+	}
+
 	/**
-	 * Send {@link #Log} 
-	 * @param tag Used to identify the source of a log message.  It usually identifies
-	 *        the class or activity where the log call occurs.
-	 * @param msg The message you would like logged.
-	 * @param tr An exception to log
+	 * Send {@link #Log}
+	 * 
+	 * @param tag
+	 *            Used to identify the source of a log message. It usually
+	 *            identifies the class or activity where the log call occurs.
+	 * @param msg
+	 *            The message you would like logged.
+	 * @param tr
+	 *            An exception to log
 	 */
 	public static void v(String tag, String msg, Throwable tr) {
-		if(V) Log.v(tag, msg, tr);
+		if (V)
+			Log.v(tag, msg, tr);
 	}
-	
+
 	/**
-	 * Send {@link #Log} 
-	 * @param tag Used to identify the source of a log message.  
-	 * @param msg The message you would like logged.
-	 * @param tr An exception to log
+	 * Send {@link #Log}
+	 * 
+	 * @param tag
+	 *            Used to identify the source of a log message.
+	 * @param msg
+	 *            The message you would like logged.
+	 * @param tr
+	 *            An exception to log
 	 */
 	public static void v(Context context, String msg, Throwable tr) {
-		if(V) {
+		if (V) {
 			String tag = context.getClass().getSimpleName();
 			Log.i(tag, msg, tr);
 		}
 	}
-	
+
 	/**
-	 * Send {@link #Log} 
-	 * @param tag Used to identify the source of a log message. 
-	 * @param msg The message you would like logged.
-	 * @param tr An exception to log
+	 * Send {@link #Log}
+	 * 
+	 * @param tag
+	 *            Used to identify the source of a log message.
+	 * @param msg
+	 *            The message you would like logged.
+	 * @param tr
+	 *            An exception to log
 	 */
 	public static void v(Class<?> clazz, String msg, Throwable tr) {
-		if(V) {
+		if (V) {
 			String tag = clazz.getSimpleName();
 			Log.d(tag, msg, tr);
 		}
 	}
-	
+
 	/**
-	 * Send {@link #Log} 
-	 * @param tag Used to identify the source of a log message.  It usually identifies
-	 *        the class or activity where the log call occurs.
-	 * @param msg The message you would like logged.
+	 * Send {@link #Log}
+	 * 
+	 * @param tag
+	 *            Used to identify the source of a log message. It usually
+	 *            identifies the class or activity where the log call occurs.
+	 * @param msg
+	 *            The message you would like logged.
 	 */
 	public static void e(String tag, String msg) {
-		if(E) Log.e(tag, msg);
-		
-	} 
-	
+		if (E)
+			Log.e(tag, msg);
+
+	}
+
 	/**
-	 * Send {@link #Log} 
-	 * @param context Used to identify the source of a log message. 
-	 * @param msg The message you would like logged.
+	 * Send {@link #Log}
+	 * 
+	 * @param context
+	 *            Used to identify the source of a log message.
+	 * @param msg
+	 *            The message you would like logged.
 	 */
 	public static void e(Context context, String msg) {
-		if(E) {
+		if (E) {
 			String tag = context.getClass().getSimpleName();
 			Log.e(tag, msg);
 		}
-		
-	} 
-	
+
+	}
+
 	/**
-	 * Send {@link #Log} 
-	 * @param context Used to identify the source of a log message. 
-	 * @param msg The message you would like logged.
+	 * Send {@link #Log}
+	 * 
+	 * @param context
+	 *            Used to identify the source of a log message.
+	 * @param msg
+	 *            The message you would like logged.
 	 */
 	public static void e(Class<?> clazz, String msg) {
-		if(E) {
+		if (E) {
 			String tag = clazz.getSimpleName();
 			Log.e(tag, msg);
 		}
-		
-	} 
-	
+
+	}
+
 	/**
-	 * Send {@link #Log} 
-	 * @param tag Used to identify the source of a log message.  It usually identifies
-	 *        the class or activity where the log call occurs.
-	 * @param msg The message you would like logged.
-	 * @param tr An exception to log
+	 * Send {@link #Log}
+	 * 
+	 * @param tag
+	 *            Used to identify the source of a log message. It usually
+	 *            identifies the class or activity where the log call occurs.
+	 * @param msg
+	 *            The message you would like logged.
+	 * @param tr
+	 *            An exception to log
 	 */
 	public static void e(String tag, String msg, Throwable tr) {
-		if(E) Log.e(tag, msg, tr);
+		if (E)
+			Log.e(tag, msg, tr);
 	}
-	
+
 	/**
-	 * Send {@link #Log} 
-	 * @param tag Used to identify the source of a log message.  
-	 * @param msg The message you would like logged.
-	 * @param tr An exception to log
+	 * Send {@link #Log}
+	 * 
+	 * @param tag
+	 *            Used to identify the source of a log message.
+	 * @param msg
+	 *            The message you would like logged.
+	 * @param tr
+	 *            An exception to log
 	 */
 	public static void e(Context context, String msg, Throwable tr) {
-		if(E) {
+		if (E) {
 			String tag = context.getClass().getSimpleName();
 			Log.e(tag, msg, tr);
 		}
 	}
-	
+
 	/**
-	 * Send {@link #Log} 
-	 * @param tag Used to identify the source of a log message. 
-	 * @param msg The message you would like logged.
-	 * @param tr An exception to log
+	 * Send {@link #Log}
+	 * 
+	 * @param tag
+	 *            Used to identify the source of a log message.
+	 * @param msg
+	 *            The message you would like logged.
+	 * @param tr
+	 *            An exception to log
 	 */
 	public static void e(Class<?> clazz, String msg, Throwable tr) {
-		if(E) {
+		if (E) {
 			String tag = clazz.getSimpleName();
 			Log.e(tag, msg, tr);
 		}
 	}
-	
+
 	/**
-	 * Send {@link #Log} 
-	 * @param tag Used to identify the source of a log message.  It usually identifies
-	 *        the class or activity where the log call occurs.
-	 * @param msg The message you would like logged.
+	 * Send {@link #Log}
+	 * 
+	 * @param tag
+	 *            Used to identify the source of a log message. It usually
+	 *            identifies the class or activity where the log call occurs.
+	 * @param msg
+	 *            The message you would like logged.
 	 */
 	public static void w(String tag, String msg) {
-		if(W) Log.w(tag, msg);
-		
-	} 
-	
+		if (W)
+			Log.w(tag, msg);
+
+	}
+
 	/**
-	 * Send {@link #Log} 
-	 * @param context Used to identify the source of a log message. 
-	 * @param msg The message you would like logged.
+	 * Send {@link #Log}
+	 * 
+	 * @param context
+	 *            Used to identify the source of a log message.
+	 * @param msg
+	 *            The message you would like logged.
 	 */
 	public static void w(Context context, String msg) {
-		if(W) {
+		if (W) {
 			String tag = context.getClass().getSimpleName();
 			Log.w(tag, msg);
 		}
-		
-	} 
-	
+
+	}
+
 	/**
-	 * Send {@link #Log} 
-	 * @param context Used to identify the source of a log message. 
-	 * @param msg The message you would like logged.
+	 * Send {@link #Log}
+	 * 
+	 * @param context
+	 *            Used to identify the source of a log message.
+	 * @param msg
+	 *            The message you would like logged.
 	 */
 	public static void w(Class<?> clazz, String msg) {
-		if(W) {
+		if (W) {
 			String tag = clazz.getSimpleName();
 			Log.w(tag, msg);
 		}
-		
-	} 
-	
+
+	}
+
 	/**
-	 * Send {@link #Log} 
-	 * @param tag Used to identify the source of a log message.  It usually identifies
-	 *        the class or activity where the log call occurs.
-	 * @param msg The message you would like logged.
-	 * @param tr An exception to log
+	 * Send {@link #Log}
+	 * 
+	 * @param tag
+	 *            Used to identify the source of a log message. It usually
+	 *            identifies the class or activity where the log call occurs.
+	 * @param msg
+	 *            The message you would like logged.
+	 * @param tr
+	 *            An exception to log
 	 */
 	public static void w(String tag, String msg, Throwable tr) {
-		if(W) Log.w(tag, msg, tr);
+		if (W)
+			Log.w(tag, msg, tr);
 	}
-	
+
 	/**
-	 * Send {@link #Log} 
-	 * @param tag Used to identify the source of a log message.  
-	 * @param msg The message you would like logged.
-	 * @param tr An exception to log
+	 * Send {@link #Log}
+	 * 
+	 * @param tag
+	 *            Used to identify the source of a log message.
+	 * @param msg
+	 *            The message you would like logged.
+	 * @param tr
+	 *            An exception to log
 	 */
 	public static void w(Context context, String msg, Throwable tr) {
-		if(W) {
+		if (W) {
 			String tag = context.getClass().getSimpleName();
 			Log.w(tag, msg, tr);
 		}
 	}
-	
+
 	/**
-	 * Send {@link #Log} 
-	 * @param tag Used to identify the source of a log message. 
-	 * @param msg The message you would like logged.
-	 * @param tr An exception to log
+	 * Send {@link #Log}
+	 * 
+	 * @param tag
+	 *            Used to identify the source of a log message.
+	 * @param msg
+	 *            The message you would like logged.
+	 * @param tr
+	 *            An exception to log
 	 */
 	public static void w(Class<?> clazz, String msg, Throwable tr) {
-		if(W) {
+		if (W) {
 			String tag = clazz.getSimpleName();
 			Log.w(tag, msg, tr);
 		}
