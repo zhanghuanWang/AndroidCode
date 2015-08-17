@@ -21,7 +21,7 @@ import android.util.Log;
 
 /** 
 * FileName: L.java 
-* description：Log Until
+* description：LogUtil
 * @version v1.0
 * @author WangZhanghuan
 * @date：2015-08-15 22:22:22
@@ -65,14 +65,17 @@ public class L {
 	}
 	
 	/**
-	 * @param e
+	 * @param w
 	 */
 	public static void warn(boolean w) {
 		W  = w;
 	}
 	
 	/**
+	 * @param d
+	 * @param i
 	 * @param e
+	 * @param w
 	 */
 	public static void setLog(boolean d, boolean i, boolean e, boolean w) {
 		D  = d;
@@ -83,7 +86,6 @@ public class L {
 	
 	/**
 	 * open all log flag
-	 * @param d
 	 */
 	public static void openAll() {
 		D  = true;
@@ -94,7 +96,6 @@ public class L {
 	
 	/**
 	 * close all log flag
-	 * @param d
 	 */
 	public static void closeAll() {
 		D  = false;
